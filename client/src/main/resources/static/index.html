@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="jquery-1.7.js"></script>
+<script src="he.js"></script>
+<script src="htmlparser.js"></script>
+<script src="epudge.xssfilter.js"></script>
+<body>
+
+
+<a href="#" onclick="get()">跨区请求get</a>
+
+<a href="#" onclick="get1()">跨区请求get</a>
+
+<div id="conten">
+   <p onclick="{$('body').css('display','none');alert('这到底是人性的扭曲还是道德的沦丧？？？')}" style="font-size:24px;color:red;cursor:pointer;background: azure">你敢点我试试？惊喜在后面,100元京东优惠卷等着你！快进来吧！</p>
+
+</div>
+
+</body>
+
+<script>
+    // var url={
+    //     base:'http://localhost:8081'
+    // }
+    // function get(){
+    //
+    //     // $.getJSON( url.base+'/home/get.json').then(function (value) {
+    //     //     debugger;
+    //     //     console.log(value);
+    //     //
+    //     // })
+    //     $.ajax({
+    //         url: url.base+'/home/get.json',
+    //
+    //         success: function (result) {
+    //             console.log('asdfasf');
+    //             debugger;
+    //             console.log(result);
+    //         }
+    //     })
+    // }
+    //
+    // function get1(){
+    //     $.ajax({
+    //         url: url.base+'/home/get1.json',
+    //         dataType:'json',
+    //         contentType:'application/json;charset=utf-8',
+    //         success: function (result) {
+    //             console.log('asdfasf');
+    //             console.log(result);
+    //         }
+    //     })
+    // }
+</script>
+<script>
+
+    console.log(filterXSS($('#conten').html()));
+</script>
+</html>
